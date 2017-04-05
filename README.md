@@ -1,40 +1,18 @@
-[![CircleCI](https://circleci.com/gh/r-park/angular2-webpack-seed.svg?style=shield&circle-token=889e179b1930b3f3291bbf27a4da6df98726edf0)](https://circleci.com/gh/r-park/angular2-webpack-seed)
+# Angular2 Admin Framework
 
+本应用使用 ng2+webpack+sass+karma+jasmine...组合方案构建一个后端管理交互界面，目的在于交流和学习。
 
-# Angular2 Webpack Seed
+#### 关于UI
+界面使用`bootstrap`扩展，UI组件使用`ng2-bootstrap`
 
-
-- Angular 2.0.1
-- Jasmine
-- Karma
-- SASS
-- Typescript 2
-- Webpack 2
-
-
-#### Features
-- Inline external HTML templates into typescript component files (optional)
-- Inline and autoprefix external SCSS files into typescript component files (optional)
-- Inject style tags into `index.html` (optional)
-- Inject script tags into `index.html`
-- Bundle and minify release builds
-
-
-Getting Started
----------------
-
-#### Prerequisites
-- `node >= 6`
-
-#### Quick Start
+#### 快速上手
 
 ```shell
 $ npm install
 $ npm start
 ```
 
-
-Usage
+基本使用命令
 -----
 
 |Script|Description|
