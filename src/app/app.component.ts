@@ -21,8 +21,15 @@ export class AppComponent extends AppBaseComponent implements OnInit {
     translate.use(browserLang.match(/zh|en/) ? browserLang : 'zh');
   }
 
+  public isMini: boolean;
+
   ngOnInit() {
 
+  }
+
+  miniSidebar(isMini) {
+    this.isMini = isMini;
+    console.log('app..', isMini);
   }
   
 }

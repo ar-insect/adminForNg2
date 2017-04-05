@@ -5,7 +5,7 @@
  * @email ar.insect@gmail.com
  * @version v1.0
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppBaseComponent } from '../app.base.component';
 import { MenuConfig } from './menu-config.interface';
 
@@ -24,11 +24,15 @@ export class AppSidebar extends AppBaseComponent implements OnInit {
         console.log('sidebar');
         
     }
+
+    @Output() onMiniMenu = new EventEmitter<boolean>(); // 往最外面的组件输出
+
     public isMini: boolean = false;
 
     public miniSidebar(isMini: boolean) {
         // console.log(isMini);
         this.isMini = isMini;
+        this.onMiniMenu.emit(this.isMini);
     }
     
     public menuConfig: MenuConfig[] = [

@@ -1,8 +1,8 @@
 <app-head></app-head>
 <div class="main-container">
     <div class="main-container-inner">
-        <app-sidebar></app-sidebar>
-        <div class="main-content">
+        <app-sidebar (onMiniMenu)="miniSidebar($event)"></app-sidebar>
+        <div class="main-content" [style.margin-left]="isMini===true ? '43px' : '190px'">
             <router-outlet></router-outlet>
         </div>
     </div>
