@@ -32,4 +32,5 @@ export class AppComponent extends AppBaseComponent implements OnInit {
     console.log('app..', isMini);
   }
   
+  
 }
