@@ -1,0 +1,115 @@
+<div class="baseinfo">
+    <form [formGroup]="userForm" (ngSubmit)="doRegister()" role="form" novalidate>
+    <ul>
+        <li class="clearfix">
+            <div class="form-group" [ngClass]="{'has-error': formErrors.userName }">
+                <div class="req">{{'userRegister.userName' | translate}}</div>
+                <div>
+                    <input type="text" name="account" class="info" 
+                            formControlName="userName"
+                            placeholder="{{'userRegister.userName-placeholder' | translate}}">
+                    
+                    <label class="error" *ngIf="formErrors.userName">{{ formErrors.userName }}</label>
+                    <i class="icon-uniE60F2"></i>
+
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="form-group" [ngClass]="{'has-error': formErrors.vcode }">
+                <div class="req">{{'userRegister.vcode' | translate}}</div>
+                <div>
+                    <input type="text" class="info code" name="imgVerification"
+                            placeholder="{{'userRegister.vcode-placeholder' | translate}}"
+                            maxlength="4">
+                    <img style="height:36px;">
+                    <i class="icon-Warning error"></i>
+                    <label class="error"></label>
+                    <i class="icon-uniE60F2"></i>
+                </div>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.mobile' | translate}}</div>
+            <div>
+                <input type="text" class="info" name="phone" 
+                        placeholder="{{'userRegister.mobile-placeholder' | translate}}">
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.authCode' | translate}}</div>
+            <div>
+                <input type="text" class="info code" name="verification" maxlength="4"
+                        placeholder="{{'userRegister.authCode-placeholder' | translate}}">
+                <button class="getcode"></button>
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.password' | translate}}</div>
+            <div>
+                <input type="password" name="passWord" class="info" maxlength="20" 
+                        placeholder="{{'userRegister.password-placeholder' | translate}}">
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.repeatPassword' | translate}}</div>
+            <div>
+                <input type="password" name="checkPwd" class="info" maxlength="20"
+                        placeholder="{{'userRegister.repeatPassword-placeholder' | translate}}">
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        <li class="password clearfix hidden">
+            <div>{{'userRegister.strength' | translate}}</div>
+            <div>
+                <ul class="nav nav-pills nav-justified pwdLi">
+                    <li>{{'userRegister.level1' | translate}}</li>
+                    <li>{{'userRegister.level2' | translate}}</li>
+                    <li>{{'userRegister.level3' | translate}}</li>
+                    <li>{{'userRegister.level4' | translate}}</li>
+                </ul>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.realName' | translate}}</div>
+            <div>
+                <input type="text" class="info" name="realName" maxlength="16"
+                        placeholder="{{'userRegister.realName-placeholder' | translate}}">
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="req">{{'userRegister.email' | translate}}</div>
+            <div>
+                <input type="text" class="info" name="email" 
+                    placeholder="{{'userRegister.email-placeholder' | translate}}">
+                <i class="icon-Warning error"></i>
+                <label class="error"></label>
+                <i class="icon-uniE60F2"></i>
+            </div>
+        </li>
+        
+        <li class="agree clearfix">
+            <div>&nbsp;</div>
+            <div><input type="checkbox" class="checkbox"> {{'userRegister.agree' | translate}}<a>{{'userRegister.terms' | translate}}</a></div>
+        </li>
+        <li class="clearfix">
+            <div>&nbsp;</div>
+            <div><button class="next">{{'userRegister.step1SignUp' | translate}}</button></div>
+        </li>
+    </ul>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+.progress {
+    position: relative
+}
+
+.progress:before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: radial-gradient(9px 9px 0deg,circle cover,#0ff 0,rgba(0,0,255,0) 100%,#00f 95%)
+}
+
+.progress.progress-mini {
+    height: 9px;
+}
+
+.progress,.progress .bar {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)!important
+}

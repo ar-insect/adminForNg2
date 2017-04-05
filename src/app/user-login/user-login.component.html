@@ -1,0 +1,81 @@
+<div class="login">
+    <div class="login-top">
+        <div class="img">
+            <img src="assets/imgs/login.png" class="img-login">
+        </div>
+        <div class="loginForm">
+            <form #form="ngForm" (ngSubmit)="form.form.valid && doLogin()" novalidate role="form">
+            <div class="login-info">
+                <p class="title">用户登录</p>
+                <ul>
+                    <li class="login-pw">
+                        <span class="loginicon"><i class="icon-zn"></i></span>
+                        <input type="text" name="userName" placeholder="邮箱/手机号" autocomplete="off"
+                                required
+                                validateUser
+                                [(ngModel)]="user.userName"
+                                #userName="ngModel">
+                        <label [hidden]="userName.valid || (userName.pristine && !form.submitted)" style="background: red">
+                            <b *ngIf="userName.errors?.required">请输入邮箱或手机号</b>
+                            <b *ngIf="userName.errors?.validateUserName">{{userName.errors?.message}}</b>
+                            <b *ngIf="userName.errors?.validateUniqueUserName">{{userName.errors?.message}}</b>
+                        </label>
+                        debug: Remove it.
+                        <label *ngIf="userName.pristine">未修改</label>
+                        <label *ngIf="userName.dirty" >已修改</label>
+                        <label *ngIf="userName.valid" >有效</label>
+                    </li>
+                    <li class="login-pw">
+                        <span class="loginicon"><i class="icon-qx"></i></span>
+                        <input type="password" name="password"
+                                placeholder="密码"
+                                autocomplete="off"
+                                required
+                                [(ngModel)]="user.password"
+                                #password="ngModel">
+                        <label [hidden]="password.valid || (password.pristine && !form.submitted)" style="background: red">
+                            <b *ngIf="password.errors?.required">密码必须输入</b>
+                        </label>
+                        debug: Remove it.
+                        <label *ngIf="password.pristine">未修改</label>
+                        <label *ngIf="password.dirty" >已修改</label>
+                        <label *ngIf="password.valid" >有效</label>
+                    </li>
+                    <li class="clearfix">
+                        <span class="pull-left">
+                            <input type="checkbox" name="remeberMe"
+                                [(ngModel)]="user.remeberMe" 
+                                #remeberMe="ngModel"> 记住我</span>
+                        <a class="pull-right">忘记密码？</a>
+                    </li>
+                    <li class="clearfix">
+                        <input type="text" name="vcode" class="acode" placeholder="验证码" autocomplete="off" 
+                            maxlength="4"
+                            required
+                            validateVcode
+                            [(ngModel)]="user.vcode"
+                            #vcode="ngModel">
+                            debug: Remove it.
+                            <label *ngIf="vcode.pristine">未修改</label>
+                            <label *ngIf="vcode.dirty" >已修改</label>
+                            <label *ngIf="vcode.valid" >有效</label>
+                        
+                        <div class="acode-info"><img [src]="vcodeWholeURL" (click)="reflashVcode()"></div>
+                        <label [hidden]="vcode.valid || (vcode.pristine && !form.submitted)" style="background: red">
+                            <b *ngIf="vcode.errors?.required">请输入验证码</b>
+                            <b *ngIf="vcode.errors?.validateVcode">{{vcode.errors?.message}}</b>
+                        </label>
+                        <a class="pull-right mgr-20" href="javascript:void(0)" (click)="reflashVcode()">看不清 换一张</a>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn-login" [disabled]="!form.form.valid">登录</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-res">注册</button>
+                    </li>
+                </ul>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

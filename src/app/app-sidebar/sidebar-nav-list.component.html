@@ -1,0 +1,20 @@
+<ul class="nav nav-list">
+    <li [class.active]="conf.active" [class.open]="conf.isShow === true" *ngFor="let conf of menuConfig">
+        <a href="{{conf.url}}" (click)="triggerMenu(conf, true)">
+            <i class="{{conf.iconCls}}"></i>
+            <span class="menu-text"> {{conf.menuText}} </span>
+            <b class="arrow icon-angle-down" *ngIf="conf?.subMenu"></b>
+        </a>
+        <ul class="submenu" *ngIf="conf?.subMenu" [class.hidden]="conf.isShow === false">
+            <li [class.active]="subConf.active" *ngFor="let subConf of conf?.subMenu">
+                <a href="{{subConf.url}}" (click)="triggerSubMenu(conf, subConf, true)">
+                    <i class="{{subConf.iconCls}}"></i>
+                    {{subConf.menuText}}
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="sidebar-collapse">
+    <i [className]="isMini === true ? 'icon-double-angle-right' : 'icon-double-angle-left'" (click)="triggerMiniMenu()"></i>
+</div>

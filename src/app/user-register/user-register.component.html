@@ -1,0 +1,10 @@
+<div ms-controller="register">
+    <ul class="nav nav-pills nav-justified step step-round nav-new-hr">
+        <li [class.active]="step==1"><a>{{'userRegister.step1Text' | translate }}</a></li>
+        <li [class.active]="step==2"><a>{{'userRegister.step2Text' | translate }}</a></li>
+        <li [class.active]="step==3"><a>{{'userRegister.step3Text' | translate }}</a></li>
+    </ul>
+    <app-user-register-step1 *ngIf="step===1"></app-user-register-step1>
+    <app-user-register-step2 *ngIf="step===2"></app-user-register-step2>
+    <app-user-register-step3 *ngIf="step===3"></app-user-register-step3>
+</div>

@@ -1,0 +1,43 @@
+{
+    "app": {
+        
+    },
+    "userRegister":{
+        "step1Text": "个人注册",
+        "step2Text": "加入或创建新公司",
+        "step3Text": "申请审核",
+        "userName": "账号：",
+        "userName-placeholder": "手机/邮箱",
+        "vcode": "图像验证码：",
+        "vcode-placeholder": "请输入图形验证码",
+        "mobile": "手机：",
+        "mobile-placeholder": "请输入手机号",
+        "authCode": "手机验证码：",
+        "authCode-placeholder": "请输入手机验证码",
+        "password": "密码：",
+        "password-placeholder": "密码，至少8位",
+        "repeatPassword": "重复密码：",
+        "repeatPassword-placeholder": "重复密码，两次输入必须一致",
+        "realName": "真实姓名：",
+        "realName-placeholder": "请输入姓名",
+        "email": "邮箱：",
+        "email-placeholder": "公司专用邮箱",
+        "strength": "密码强度：",
+        "level1": "危险",
+        "level2": "一般",
+        "level3": "高",
+        "level4": "极高",
+        "agree": "我已经阅读并同意",
+        "terms": "《用户服务条款》",
+        "step1SignUp": "下一步"
+    },
+    "userLogin": {
+        "userLogin": "用户登录"
+    },
+    "search": "搜索",
+    "submit": "提交",
+    "firstPage": "首页",
+    "lastPage": "末页",
+    "previousPage": "上一页",
+    "nextPage": "下一页"
+}
