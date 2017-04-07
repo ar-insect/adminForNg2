@@ -52,10 +52,6 @@ const loaders = {
     test: /\.html$/,
     loader: 'raw'
   },
-  /*json: {
-    test: /\.json$/,
-    loader: 'ignore-loader'
-  },*/
   typescript: {
     test: /\.ts$/,
     loader: 'ts',

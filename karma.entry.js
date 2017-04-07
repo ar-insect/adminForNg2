@@ -30,6 +30,7 @@ testing.TestBed.initTestEnvironment(
 );
 
 
-// Load source files
+// Load source files.
+// 打包文件名后缀为 spec.ts 测试代码
 var context = require.context('./src', true, /\.spec\.ts/);
 context.keys().forEach(context);

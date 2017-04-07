@@ -10,6 +10,15 @@ module.exports = config => {
 
     webpack: require('./webpack.config'),
 
+    // plugins: [
+    //   'karma-jasmine',
+    //   'karma-chrome-launcher',
+    //   require('karma-webpack')
+    // ],
+    // proxies: {
+    //   '/app/': 'http://localhost:3000/app'
+    // },
+
     webpackServer: {
       noInfo: true
     },
