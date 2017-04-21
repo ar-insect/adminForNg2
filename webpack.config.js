@@ -91,8 +91,12 @@ config.plugins = [
     debug: false,
     minimize: ENV_PRODUCTION
   }),
+  // new ContextReplacementPlugin(
+  //   /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+  //   path.resolve('src')
+  // )
   new ContextReplacementPlugin(
-    /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+    /angular(\\|\/)core(\\|\/)@angular/,
     path.resolve('src')
   )
 ];

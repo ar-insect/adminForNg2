@@ -17,9 +17,12 @@ import { SharedModule } from './shared/shared.module'; // 应用程式共享的�
 
 // service.
 import { AppConfigService } from './public/app-config.service'; // 应用程式配置方面的服务，在整个应用启动之前执行
+import { VerifyCodeService } from './services/verify-code.service'; // 验证码服务
 // import { UserLoginService } from './user-login/user-login.service'; // 登录服务
 // import { UserRegisterService } from './user-register/user-register.service'; // 注册服务
 // directive.
+import { MobileValidatorDirective } from './directives/mobile-validator.directive';
+import { VcodeValidatorDirective } from './directives/verifyCode-validator.directive';
 // import { EqualValidator } from './user-register/directives/equal-validator.directive';
 import { AppComponent } from './app.component'; // 应用视图入口
 import { AppHead } from './app-head/app-head.component'; // 应用程式头部
@@ -31,9 +34,9 @@ import { IndexComponent } from './index/index.component'; // 首页
 // 路由配置
 import { appRoutes } from './app.routes';
 // UI base library use by ng2-bootstrap.
-import { ModalModule } from 'ng2-bootstrap/modal';
-import { PaginationModule } from 'ng2-bootstrap/pagination';
-import { DropdownModule, DropdownDirective } from 'ng2-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal'; // 模态框组件
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 export function configServiceFactory (config: AppConfigService) {
   console.log('------application init------');
@@ -59,7 +62,7 @@ export function configServiceFactory (config: AppConfigService) {
     RouterModule.forRoot(appRoutes),
     ModalModule.forRoot(),
     PaginationModule.forRoot(),
-    DropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),
    ], // 主模块中所需要的依赖
   declarations: [ 
     AppComponent,         // 主视图
@@ -69,9 +72,12 @@ export function configServiceFactory (config: AppConfigService) {
     SidebarNavList,
     AppFoot,
     IndexComponent,
+    MobileValidatorDirective,
+    VcodeValidatorDirective,
     ], // 声明本模块中拥有的视图类
   providers: [
     AppConfigService,
+    VerifyCodeService,
     // UserLoginService, // 登录服务
     // UserRegisterService, // 注册服务
     // PostTableService,

@@ -1,1 +1,92 @@
-<div>内容。。。。</div>
+
+<div>
+	
+	<button class="custom-service" (click)="openLgModal()">咨询合作</button>
+
+	<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title pull-left">Small modal</h4>
+				<button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title pull-left">咨询合作</h4>
+				<button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<form class="form-body" #form="ngForm" (ngSubmit)="form.form.valid && doSubmit()" novalidate role="form">
+				<ul class="body-list">
+					<li [ngClass]="{ 'has-error': companyName.invalid && companyName.touched }">
+						<img class="activeImg" src="../../assets/images/icon_compay_b.png" *ngIf="companyName.valid">
+						<img class="defaultImg" src="../../assets/images/icon_compay_g.png" *ngIf="companyName.invalid">
+						<input class="form-control" type="text" name="companyName"
+							required
+							placeholder="请输入公司名称"
+							[(ngModel)]="consult.companyName"
+							#companyName="ngModel">
+					</li>
+					<li [ngClass]="{ 'has-error': name.invalid && name.touched }">
+						<img class="activeImg" src="../../assets/images/icon_name_b.png" *ngIf="name.valid">
+						<img class="defaultImg" src="../../assets/images/icon_name_g.png" *ngIf="name.invalid">
+						<input class="form-control" type="text" name="name" 
+							required 
+							placeholder="请输入姓名"
+							[(ngModel)]="consult.name"
+							#name="ngModel">
+					</li>
+					<li [ngClass]="{ 'has-error': mobile.invalid && mobile.touched }">
+						<img class="activeImg" src="../../assets/images/icon_mobile_b.png" *ngIf="mobile.valid">
+						<img class="defaultImg" src="../../assets/images/icon_mobile_g.png" *ngIf="mobile.invalid">
+						<input class="form-control" type="text" name="mobile" 
+								required 
+								validateMobile
+								placeholder="请输入手机号"
+								[(ngModel)]="consult.mobile"
+								#mobile="ngModel">
+						<button class="btnCls btn-verify" [disabled]="mobile.invalid || mobile.errors?.validate || isDisabled" (click)="getVcode($event)">获取验证码</button>
+					</li>
+					<li [ngClass]="{ 'has-error': verification.invalid && verification.touched }">
+						<img class="activeImg" src="../../assets/images/icon_code_b.png" *ngIf="verification.valid">
+						<img class="defaultImg" src="../../assets/images/icon_code_g.png" *ngIf="verification.invalid || mobile.invalid">
+						<input class="form-control" type="text" name="verification"
+							required 
+							[disabled]="mobile.invalid"
+							[validateVcode]="consult.mobile"
+							placeholder="请输入短信验证码"
+							[(ngModel)]="consult.verification"
+							#verification="ngModel">
+					</li>
+				</ul>
+				<div [ngClass]="{ 'has-error': memo.invalid && memo.touched }">
+				<textarea class="txtbox" class="form-control" name="memo"
+					required
+					placeholder="留言板"
+					[(ngModel)]="consult.memo"
+					#memo="ngModel"></textarea>
+				</div>
+				<button class="btnCls submitBtn" 
+					[disabled]="form.invalid">提 交</button>
+			</form>
+
+			</div>
+		</div>
+	</div>
+
+
+
+</div>

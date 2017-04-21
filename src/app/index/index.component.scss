@@ -1,0 +1,128 @@
+
+/*咨询合作表单 */
+.form-modal * {
+    margin: 0;
+    padding: 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.btnCls{
+    background: #0083df;
+    border: 0 !important;
+    color: #fff !important;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+.btnCls:hover{
+    background: #006cb8;
+}
+
+.btnCls[disabled] {
+    background: #ddd;
+    cursor: not-allowed;
+}
+
+.btn-verify {
+    float: right;
+    position: relative;
+    top: -32px;
+    left: -32px;
+}
+
+.form-modal{
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	margin-left: -225px;
+	width: 450px;
+	height: 525px;
+	background: #fff;
+	border-radius: 8px;
+	z-index: 100;
+    padding: 0;
+}
+.form-title{
+    height: 65px;
+    background: #e7ecef;
+    color: #212b34;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    padding: 20px;
+}
+.close-btn{
+    float: right;
+}
+.close-btn:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.form-body{
+    height:-moz-calc( 100% - 65px );
+    height:-webkit-calc( 100% - 65px );
+    height:calc( 100% - 65px);
+    padding: 30px 50px;
+}
+.form-body >ul >li{
+    list-style: none;
+    position: relative;
+    margin-bottom: 15px;
+}
+.form-body >ul >li input{
+    width: 350px;
+    height: 42px;
+    line-height: 38px;
+    text-indent: 2px;
+    border: 1px #e1e7e9 solid;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+    padding-left: 40px;
+    border-radius: 3px;
+}
+.form-body >ul >li.error input{
+    border-color: #f00;
+}
+.form-body >ul >li img{
+    position: absolute;
+    margin: 10px;
+}
+.form-body >ul >li .YZMbtn{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    padding-left: 0;
+    right: 10px;
+    top: 5px;
+}
+
+.form-body >ul >li.act .defaultImg{
+    display: none;
+}
+
+.form-body .txtbox{
+    font-family: we;
+    width: 350px;
+    height: 102px;
+    border: 1px #e1e7e9 solid;
+    outline: none;
+    color: #333;
+    font-size: 14px;
+    border-radius: 3px;
+    padding: 10px;
+    resize: none;
+    font-family: "微软雅黑","Microsoft YaHei",PingFangSC-Regular,SimHei;
+}
+.form-body .txtbox:focus{
+    border-color: #0083df;
+}
+
+.form-body .submitBtn {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 20px;
+}
